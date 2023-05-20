@@ -62,7 +62,7 @@ const CaloriePage = () => {
       <ScrollView style={styles.calorieList}>
         {calorieList.map((item) => {
           return (
-            <View style={styles.calorieListItem}>
+            <View style={styles.calorieListItem} key={`${Math.floor(Math.random() * 10000)}`}>
               <View>
                 <Text style={styles.calorieListText}>Meal: {item.meal}</Text>
                 <Text style={styles.calorieListText}>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   calorieListItem: {
     flexDirection:'row',
     justifyContent:'space-between',
-    width: 350,
+    width: 320,
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",

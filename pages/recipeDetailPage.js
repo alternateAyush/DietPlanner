@@ -8,12 +8,25 @@ const RecipeDetailPage = ({ meal }) => {
     <ScrollView style={styles.recipeDetail}>
       <Image source={{ uri: meal.image }} style={styles.recipeDetailImg} />
       <Text style={styles.recipeDetailTitle}>{meal.label} </Text>
-      <View style={{ flexDirection: "row", marginHorizontal:10, marginVertical:5, flexWrap:'wrap'}}>
+      <View
+        style={{
+          flexDirection: "row",
+          marginHorizontal: 10,
+          marginVertical: 5,
+          flexWrap: "wrap",
+        }}
+      >
         {meal.dietLabels.map((item) => {
-          return <Text style={{ fontSize: 18 ,color:'green',fontWeight:'bold'}}>{item} . </Text>;
+          return (
+            <Text
+              key={`${Math.floor(Math.random() * 10000)}`}
+              style={{ fontSize: 18, color: "green", fontWeight: "bold" }}
+            >
+              {item} .{" "}
+            </Text>
+          );
         })}
       </View>
-      <Text>{meal.mealType}</Text>
       <View style={styles.tag}>
         <Text style={{ fontSize: 20, color: "green", fontWeight: "bold" }}>
           Total Nutrients
@@ -21,7 +34,10 @@ const RecipeDetailPage = ({ meal }) => {
       </View>
       {totalNutrients.map((item) => {
         return (
-          <View style={styles.info}>
+          <View
+            style={styles.info}
+            key={`${Math.floor(Math.random() * 10000)}`}
+          >
             <Text style={styles.label}>
               {item.label}({item.unit}):{" "}
             </Text>
@@ -38,7 +54,10 @@ const RecipeDetailPage = ({ meal }) => {
       </View>
       {totalDaily.map((item) => {
         return (
-          <View style={styles.info}>
+          <View
+            style={styles.info}
+            key={`${Math.floor(Math.random() * 10000)}`}
+          >
             <Text style={styles.label}>
               {item.label}({item.unit}):{" "}
             </Text>
@@ -55,7 +74,10 @@ const RecipeDetailPage = ({ meal }) => {
       </View>
       {meal.ingredientLines.map((item) => {
         return (
-          <View style={styles.info}>
+          <View
+            style={styles.info}
+            key={`${Math.floor(Math.random() * 10000)}`}
+          >
             <Text style={{ fontSize: 18 }}>{item}</Text>
           </View>
         );
@@ -75,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fbfcf8",
   },
   recipeDetailImg: {
-    width: 400,
+    width: 350,
     height: 400,
     marginVertical: 10,
     borderTopLeftRadius: 20,

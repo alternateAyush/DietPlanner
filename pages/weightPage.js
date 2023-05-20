@@ -51,7 +51,7 @@ const WeightPage = () => {
       <ScrollView style={styles.weightList}>
         {weightList.map((item) => {
           return (
-            <View style={styles.weightListItem}>
+            <View style={styles.weightListItem} key={`${Math.floor(Math.random() * 10000)}`}>
               <Image
                 source={require("../assets/weight-logo.png")}
                 style={styles.weightLogo}
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: 350,
+    width: 330,
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",

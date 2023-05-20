@@ -12,7 +12,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Diet App" component={Home} />
+        <Stack.Screen name="Health Island" component={Home} />
         <Stack.Screen name="Calorie Counter" component={CaloriePage} />
         <Stack.Screen name="Weight Progress" component={WeightPage} />
         <Stack.Screen name="Healthy Recipe">

@@ -6,7 +6,7 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <AppLogo/>
-      <Text style={styles.title}>Diet App Navigation</Text>
+      <Text style={styles.title}>Let us prioritise health together</Text>
       <ButtonList navigation={navigation}/>
     </View>
   );
@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title:{
+    textAlign:'center',
+    alignSelf:'center',
     fontSize:30,
     margin:10,
     fontWeight:'bold',

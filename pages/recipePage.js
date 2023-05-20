@@ -71,7 +71,7 @@ const RecipePage = ({ setMeal, navigation }) => {
       if (response.success) {
         setMeals(response.data.hits);
       }
-      setQuery('');
+      setQuery("");
       setLoader(false);
     };
     try {
@@ -137,9 +137,14 @@ const RecipePage = ({ setMeal, navigation }) => {
       <ScrollView style={{ marginVertical: 10 }}>
         {meals.map((item) => {
           return (
-            <View>
-              <MealCard meal={item} setMeal={setMeal} navigation={navigation} />
-            </View>
+            <MealCard
+              meal={item}
+              setMeal={setMeal}
+              navigation={navigation}
+              key={`${item.recipe.label} - ${Math.floor(
+                Math.random() * 10000
+              )}`}
+            />
           );
         })}
       </ScrollView>
@@ -153,7 +158,7 @@ const styles = StyleSheet.create({
   },
   inputText: {
     height: 40,
-    width: 325,
+    width: 280,
     padding: 5,
     margin: 10,
     borderRadius: 10,
@@ -165,7 +170,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: 400,
+    width: 300,
     alignItems: "center",
     margin: 10,
   },
